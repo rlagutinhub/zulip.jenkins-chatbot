@@ -81,9 +81,9 @@ deactivate
 * passwords_access - list email addresses (not case sensitive) of zulip users who are allowed to receive one-time password (token).
 
 ```console
-"zuliprc_file": "/opt/jenkins-chatbot/bot.zuliprc",
-"welcome_file": "/opt/jenkins-chatbot/bot.welcome",
-"logging_file": "/opt/jenkins-chatbot/bot.log",
+"zuliprc_file": "/opt/zulip.jenkins-chatbot/bot.zuliprc",
+"welcome_file": "/opt/zulip.jenkins-chatbot/bot.welcome",
+"logging_file": "/opt/zulip.jenkins-chatbot/bot.log",
 "logging_format": "%(asctime)s - %(levelname)s - %(message)s",
 "bot_name": ["jenkins", "evgeny", "евгений", "@**jenkins bot**"],
 "bot_email": "jenkins-bot@msg.dev.mta4.ru",
@@ -122,7 +122,7 @@ deactivate
 "user_name": "admin",
 "user_pass": "1198e32cfd40eb03a6ce993739d47d3774",
 "streams": ["DevOps"],
-"artifacts": "/opt/jenkins-chatbot/addons/test.sh",
+"artifacts": "/opt/zulip.jenkins-chatbot/addons/test.sh",
 "help_url": "https://github.com/zulip/zulip/",
 "param_list": []
 ```
@@ -152,7 +152,7 @@ https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/bu
 "user_name": "admin",
 "user_pass": "1198e32cfd40eb03a6ce993739d47d3774",
 "streams": ["DevOps"],
-"artifacts": "/opt/jenkins-chatbot/addons/test.sh",
+"artifacts": "/opt/zulip.jenkins-chatbot/addons/test.sh",
 "help_url": "https://github.com/zulip/zulip/",
 "param_list": [
     "var1",
