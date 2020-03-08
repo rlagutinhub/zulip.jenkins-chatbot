@@ -13,10 +13,10 @@ FYI https://zulipchat.com/api/
 ```bash
 cd /opt
 git clone https://github.com/rlagutinhub/zulip.jenkins-chatbot.git
+cd zulip.jenkins-chatbot
 ```
 ### Create python virtualenv
 ```bash
-cd zulip.jenkins-chatbot
 virtualenv --version
 virtualenv env
 ```
