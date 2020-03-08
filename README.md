@@ -195,5 +195,19 @@ ExecStart=/opt/zulip.jenkins-chatbot/env/bin/python3 /opt/zulip.jenkins-chatbot/
 WantedBy=multi-user.target
 EOF
 ```
+```bash
+systemctl daemon-reload
+
+systemctl enable zulip.jenkins-chatbot.service
+systemctl start zulip.jenkins-chatbot.service
+systemctl status zulip.jenkins-chatbot.service
+
+# systemctl start zulip.jenkins-chatbot.service
+# systemctl stop zulip.jenkins-chatbot.service
+# systemctl restart zulip.jenkins-chatbot.service
+
+journalctl --full -b 0 -u zulip.jenkins-chatbot.service --follow
+tail -f /opt/zulip.jenkins-chatbot/bot.log
+```
 
 ***
