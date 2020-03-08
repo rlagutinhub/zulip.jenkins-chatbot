@@ -113,7 +113,7 @@ deactivate
 * streams - list of subscribed zulip steams (not case sensitive) that are allowed to access this job.
 * artifacts - full path to script file for getting the list of artifacts this job (place into addons). 
 * help_url - url to wiki with job help.
-* param_list - this list empty for Jenkins job without build parameters.
+* param_list - this list empty for Jenkins job without build parameters!
 
 ```console
 "server_url": "https://jenkins.dev.mta4.ru",
@@ -139,7 +139,7 @@ deactivate
 * streams - list of subscribed zulip steams (not case sensitive) that are allowed to access this job.
 * artifacts - full path to script file for getting the list of artifacts this job (place into addons). 
 * help_url - url to wiki with job help.
-* param_list - this list empty for Jenkins job without build parameters!
+* param_list - list of all paramers name (not case sensitive) for Jenkins job with build parameters!
 
 ```console
 "server_url": "https://jenkins.dev.mta4.ru",
