@@ -19,7 +19,6 @@ cd zulip.jenkins-chatbot
 ```
 #### Create python virtualenv
 ```bash
-virtualenv --version
 virtualenv env
 ```
 #### Activate python virtualenv
