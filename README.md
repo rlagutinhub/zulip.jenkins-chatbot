@@ -9,7 +9,7 @@ FYI https://zulipchat.com/api/
 
 ## Install
 
-### Clone git repo in to /opt
+### Clone git repo
 ```bash
 cd /opt
 git clone https://github.com/rlagutinhub/zulip.jenkins-chatbot.git
