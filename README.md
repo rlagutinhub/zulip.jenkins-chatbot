@@ -67,7 +67,9 @@ deactivate
 > * welcome_file - full path to welcome screen file at startup
 > * logging_file - full path to log file
 > * logging_format - format log message (see python3 logging)
-> * bot_name - list bot names
+> * bot_name - list of names for this bot (not case sensitive)
+> * bot_email - email address for this bot into zulip (not case sensitive). Message from sender with this email address ignored.
+> * streams - list of subscribed zulip steams (not case sensitive). Bot only listens from subscribed stream (for private stream required manual subscribe)
 
 ```console
 "zuliprc_file": "/opt/jenkins-chatbot/bot.zuliprc",
