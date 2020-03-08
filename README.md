@@ -9,6 +9,8 @@ FYI https://zulipchat.com/api/
 
 ## Installing
 
+> Required packages python3x, python3x-pip and virtualenv (pypi).
+
 #### Clone git repo
 ```bash
 cd /opt
