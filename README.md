@@ -31,6 +31,7 @@ pip3 install -U zulip
 ### List installed packages in to virtualenv
 ```bash
 pip3 list
+
 Package       Version
 ------------- ----------
 certifi       2019.11.28
@@ -62,19 +63,27 @@ deactivate
 
 * Main settings
 
-> Recommend administration_port_enabled=true (admin console access only from other port with force ssl) and recommend lower case for domain_name.
+> All settings are required
 
 ```console
-[Base]
-keys=base
-base.domain_name=mta4ru
-base.admin_name=AdminServer
-base.admin_listen_port=7001
-base.production_mode=prod
-base.administration_port_enabled=true
-base.administration_port=9002
-base.admin_console_enabled=true
-base.derby_enabled=false
+"zuliprc_file": "/opt/jenkins-chatbot/bot.zuliprc",
+"welcome_file": "/opt/jenkins-chatbot/bot.welcome",
+"logging_file": "/opt/jenkins-chatbot/bot.log",
+"logging_format": "%(asctime)s - %(levelname)s - %(message)s",
+"bot_name": ["jenkins", "evgeny", "евгений", "@**jenkins bot**"],
+"bot_email": "jenkins-bot@msg.dev.mta4.ru",
+"streams": ["DevOps", "core team", "general", "test"],
+"help_cmd": ["help", "man", "manual", "помощь", "хелп", "мануал", "ман"],
+"help_url": "https://zulipchat.com/",
+"deploy_cmd": ["deploy", "build", "start", "run", "билд", "пуск", "запуск", "запустить", "старт", "сборка", "собрать"],
+"artifacts_cmd": ["artifacts", "artifact", "components", "component", "артефакты", "артефакт", "компоненты", "компонент"],
+"passwords_cmd": ["token", "токен"],
+"passwords_arg": ["token", "токен"],
+"passwords_access": [
+    "user1@mta4.ru",
+    "user2@mta4.ru",
+    "user3@mta4.ru"
+]
 ```
 
 * Job settings
