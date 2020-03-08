@@ -212,3 +212,6 @@ tail -f /opt/zulip.jenkins-chatbot/bot.log
 ```
 
 ***
+
+![alt text](https://raw.githubusercontent.com/rlagutinhub/zulip.jenkins-chatbot/master/screen1.png)
+![alt text](https://raw.githubusercontent.com/rlagutinhub/zulip.jenkins-chatbot/master/screen2.png)
