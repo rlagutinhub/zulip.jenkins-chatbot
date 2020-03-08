@@ -61,15 +61,22 @@ deactivate
 
 ```vim zulip.jenkins-chatbot/bot.properties```
 
-* Main settings
+### Main settings
 
-> * zuliprc_file - full path to zuliprc file (if zulip with self-signed certificate then add ```insecure=true```)
-> * welcome_file - full path to welcome screen file at startup
-> * logging_file - full path to log file
-> * logging_format - format log message (see python3 logging)
-> * bot_name - list of names for this bot (not case sensitive)
-> * bot_email - email address for this bot into zulip (not case sensitive). Message from sender with this email address ignored.
-> * streams - list of subscribed zulip steams (not case sensitive). Bot only listens from subscribed stream (for private stream required manual subscribe)
+* zuliprc_file - full path to zuliprc file (if zulip with self-signed certificate then add ```insecure=true```).
+* welcome_file - full path to welcome screen file at startup.
+* logging_file - full path to log file.
+* logging_format - format log message (see python3 logging).
+* bot_name - list of names for this bot (not case sensitive).
+* bot_email - email address for this bot into zulip (not case sensitive). Message from sender with this email address ignored.
+* streams - list of subscribed zulip steams (not case sensitive). Bot only listens from subscribed stream (for private stream required manual subscribe).
+* help_cmd - list of command names for get main help (not case sensitive).
+* help_url - url to wiki with main help.
+* deploy_cmd - list of command names for run job (not case sensitive).
+* artifacts_cmd - list of command names for get exist artifacts job (not case sensitive).
+* passwords_cmd - list of command names for get one-time password (not case sensitive).
+* passwords_arg - list of arguments names for use one-time password at run job (not case sensitive). Run job required one-time password.
+* passwords_access - list email addresses of zulip users who are allowed to receive one-time password (token).
 
 ```console
 "zuliprc_file": "/opt/jenkins-chatbot/bot.zuliprc",
