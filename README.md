@@ -78,7 +78,7 @@ deactivate
 * artifacts_cmd - list of command names for get exist artifacts job (not case sensitive).
 * passwords_cmd - list of command names for get one-time password (not case sensitive).
 * passwords_arg - list of arguments names for use one-time password at run job (not case sensitive). Run job required one-time password.
-* passwords_access - list email addresses of zulip users who are allowed to receive one-time password (token).
+* passwords_access - list email addresses (not case sensitive) of zulip users who are allowed to receive one-time password (token).
 
 ```console
 "zuliprc_file": "/opt/jenkins-chatbot/bot.zuliprc",
@@ -101,15 +101,62 @@ deactivate
 ]
 ```
 
-* Job settings
+#### Settings for Jenkins job without build parameters
 
-> Use only strong password 12-14 symbols [wiki](https://en.wikipedia.org/wiki/Password_strength)
+> All settings are required.
+
+* server_url - Jenkins URL.
+* job_name - job name (not case sensitive and support whitespaces).
+* url_token - token from job setting "trigger builds remotely".
+* user_name - user name for auth when starting job.
+* user_pass - user pass (API Token) for auth when starting job.
+* streams - list of subscribed zulip steams (not case sensitive) that are allowed to access this job.
+* artifacts - full path to script file for getting the list of artifacts this job (place into addons). 
+* help_url - url to wiki with job help.
+* param_list - this list empty for Jenkins job without build parameters.
 
 ```console
-[Security]
-keys=sec
-sec.username=weblogic
-sec.password=welcome1
+"server_url": "https://jenkins.dev.mta4.ru",
+"job_name": "Test",
+"url_token": "WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D8U",
+"user_name": "admin",
+"user_pass": "1198e32cfd40eb03a6ce993739d47d3774",
+"streams": ["DevOps"],
+"artifacts": "/opt/jenkins-chatbot/addons/test.sh",
+"help_url": "https://github.com/zulip/zulip/",
+"param_list": []
+```
+
+#### Settings for Jenkins job with build parameters
+
+> All settings are required.
+
+* server_url - Jenkins URL.
+* job_name - job name (not case sensitive and support whitespaces).
+* url_token - token from job setting "trigger builds remotely".
+* user_name - user name for auth when starting job.
+* user_pass - user pass (API Token) for auth when starting job.
+* streams - list of subscribed zulip steams (not case sensitive) that are allowed to access this job.
+* artifacts - full path to script file for getting the list of artifacts this job (place into addons). 
+* help_url - url to wiki with job help.
+* param_list - this list empty for Jenkins job without build parameters!
+
+```console
+"server_url": "https://jenkins.dev.mta4.ru",
+"job_name": "Test",
+"url_token": "WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D8U",
+"user_name": "admin",
+"user_pass": "1198e32cfd40eb03a6ce993739d47d3774",
+"streams": ["DevOps"],
+"artifacts": "/opt/jenkins-chatbot/addons/test.sh",
+"help_url": "https://github.com/zulip/zulip/",
+"param_list": [
+    "var1",
+    "var2",
+    "var3",
+    "var4",
+    "var5"
+]
 ```
 
 ***
