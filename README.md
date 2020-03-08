@@ -7,7 +7,7 @@ FYI https://zulipchat.com/api/
 
 ***
 
-## Install
+## Installing
 
 #### Clone git repo
 ```bash
@@ -102,7 +102,10 @@ deactivate
 ```
 
 #### Settings for Jenkins job without build parameters
-
+example generated url:
+```
+https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/build?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U
+```
 > All settings are required.
 
 * server_url - Jenkins URL.
@@ -128,7 +131,10 @@ deactivate
 ```
 
 #### Settings for Jenkins job with build parameters
-
+example generated url:
+```
+https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/buildWithParameters?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U&var1=1&var2=2&var3=3&var4=text&var5=true
+```
 > All settings are required.
 
 * server_url - Jenkins URL.
@@ -158,6 +164,20 @@ deactivate
     "var5"
 ]
 ```
+
+## Manual start
+
+```
+/opt/zulip.jenkins-chatbot/env/bin/python3 /opt/zulip.jenkins-chatbot/bot.py --properties /opt/zulip.jenkins-chatbot/bot.properties
+```
+
+## Auto start (systemd)
+
+
+
+
+
+
 
 ***
 
