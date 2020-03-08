@@ -24,11 +24,11 @@ virtualenv env
 ```bash
 source env/bin/activate
 ```
-### Install latest zulip package in to virtualenv
+### Install latest zulip package into virtualenv
 ```bash
 pip3 install -U zulip
 ```
-### List installed packages in to virtualenv
+### List installed packages into virtualenv
 ```bash
 pip3 list
 
