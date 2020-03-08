@@ -7,7 +7,7 @@ FYI https://zulipchat.com/api/
 
 ***
 
-## Install bot
+## Install
 
 ### Clone git repo in to /opt
 ```bash
