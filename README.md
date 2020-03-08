@@ -210,8 +210,13 @@ systemctl status zulip.jenkins-chatbot.service
 journalctl --full -b 0 -u zulip.jenkins-chatbot.service --follow
 tail -f /opt/zulip.jenkins-chatbot/bot.log
 ```
+***
+## Bot settings
+
+![alt text](https://raw.githubusercontent.com/rlagutinhub/zulip.jenkins-chatbot/master/screen.png)
 
 ***
+## Result
 
 ![alt text](https://raw.githubusercontent.com/rlagutinhub/zulip.jenkins-chatbot/master/screen1.png)
 ![alt text](https://raw.githubusercontent.com/rlagutinhub/zulip.jenkins-chatbot/master/screen2.png)
