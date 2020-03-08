@@ -215,3 +215,8 @@ tail -f /opt/zulip.jenkins-chatbot/bot.log
 
 ![alt text](https://raw.githubusercontent.com/rlagutinhub/zulip.jenkins-chatbot/master/screen1.png)
 ![alt text](https://raw.githubusercontent.com/rlagutinhub/zulip.jenkins-chatbot/master/screen2.png)
+
+## Back answer from jenkins
+___
+* zulipchat.com [zulip-plugin](https://zulipchat.com/integrations/doc/jenkins)
+* GitHub [zulip-plugin](https://github.com/jenkinsci/zulip-plugin/blob/master/README.markdown)
