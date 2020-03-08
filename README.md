@@ -63,6 +63,8 @@ deactivate
 
 #### Main settings
 
+> All settings are required.
+
 * zuliprc_file - full path to zuliprc file (if zulip with self-signed certificate then add ```insecure=true```).
 * welcome_file - full path to welcome screen file at startup.
 * logging_file - full path to log file.
