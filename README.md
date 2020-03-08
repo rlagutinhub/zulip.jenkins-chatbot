@@ -9,26 +9,26 @@ FYI https://zulipchat.com/api/
 
 ## Install
 
-### Clone git repo
+#### Clone git repo
 ```bash
 cd /opt
 git clone https://github.com/rlagutinhub/zulip.jenkins-chatbot.git
 cd zulip.jenkins-chatbot
 ```
-### Create python virtualenv
+#### Create python virtualenv
 ```bash
 virtualenv --version
 virtualenv env
 ```
-### Activate python virtualenv
+#### Activate python virtualenv
 ```bash
 source env/bin/activate
 ```
-### Install latest zulip package into virtualenv
+#### Install latest zulip package into virtualenv
 ```bash
 pip3 install -U zulip
 ```
-### List installed packages into virtualenv
+#### List installed packages into virtualenv
 ```bash
 pip3 list
 
@@ -52,7 +52,7 @@ urllib3       1.24.3
 wheel         0.33.6
 zulip         0.6.3
 ```
-### Deactivate python virtualenv
+#### Deactivate python virtualenv
 ```bash
 deactivate
 ```
@@ -61,7 +61,7 @@ deactivate
 
 ```vim zulip.jenkins-chatbot/bot.properties```
 
-### Main settings
+#### Main settings
 
 * zuliprc_file - full path to zuliprc file (if zulip with self-signed certificate then add ```insecure=true```).
 * welcome_file - full path to welcome screen file at startup.
