@@ -102,10 +102,7 @@ deactivate
 ```
 
 #### Settings for Jenkins job without build parameters
-example generated url:
-```
-https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/build?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U
-```
+
 > All settings are required.
 
 * server_url - Jenkins URL.
@@ -129,12 +126,13 @@ https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/bu
 "help_url": "https://github.com/zulip/zulip/",
 "param_list": []
 ```
-
-#### Settings for Jenkins job with build parameters
 example generated url:
 ```
-https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/buildWithParameters?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U&var1=1&var2=2&var3=3&var4=text&var5=true
+https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/build?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U
 ```
+
+#### Settings for Jenkins job with build parameters
+
 > All settings are required.
 
 * server_url - Jenkins URL.
@@ -163,6 +161,10 @@ https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/bu
     "var4",
     "var5"
 ]
+```
+example generated url:
+```
+https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/buildWithParameters?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U&var1=1&var2=2&var3=3&var4=text&var5=true
 ```
 
 ## Manual start
