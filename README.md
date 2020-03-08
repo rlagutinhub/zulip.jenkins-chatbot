@@ -27,7 +27,6 @@ source env/bin/activate
 ### Install latest zulip package in to virtualenv
 ```bash
 pip3 install -U zulip
-EOF
 ```
 ### List installed packages in to virtualenv
 ```bash
@@ -56,6 +55,9 @@ zulip         0.6.3
 ```bash
 deactivate
 ```
+
+## Setting
+
 
 ***
 
