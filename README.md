@@ -218,5 +218,5 @@ tail -f /opt/zulip.jenkins-chatbot/bot.log
 
 ## Back answer from jenkins
 ___
-* zulipchat.com [zulip-plugin](https://zulipchat.com/integrations/doc/jenkins)
+* ZulipChat.com [zulip-plugin](https://zulipchat.com/integrations/doc/jenkins)
 * GitHub [zulip-plugin](https://github.com/jenkinsci/zulip-plugin/blob/master/README.markdown)
