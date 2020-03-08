@@ -56,8 +56,37 @@ zulip         0.6.3
 deactivate
 ```
 
-## Setting
+## Properties
 
+```vim zulip.jenkins-chatbot/bot.properties```
+
+* Main settings
+
+> Recommend administration_port_enabled=true (admin console access only from other port with force ssl) and recommend lower case for domain_name.
+
+```console
+[Base]
+keys=base
+base.domain_name=mta4ru
+base.admin_name=AdminServer
+base.admin_listen_port=7001
+base.production_mode=prod
+base.administration_port_enabled=true
+base.administration_port=9002
+base.admin_console_enabled=true
+base.derby_enabled=false
+```
+
+* Job settings
+
+> Use only strong password 12-14 symbols [wiki](https://en.wikipedia.org/wiki/Password_strength)
+
+```console
+[Security]
+keys=sec
+sec.username=weblogic
+sec.password=welcome1
+```
 
 ***
 
