@@ -126,7 +126,7 @@ deactivate
 "help_url": "https://github.com/zulip/zulip/",
 "param_list": []
 ```
-example generated url:
+example generated trigger url for run job:
 ```
 https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/build?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U
 ```
@@ -162,7 +162,7 @@ https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/bu
     "var5"
 ]
 ```
-example generated url:
+example generated trigger url for run job:
 ```
 https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/buildWithParameters?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U&var1=1&var2=2&var3=3&var4=text&var5=true
 ```
