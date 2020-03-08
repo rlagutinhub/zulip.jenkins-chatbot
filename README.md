@@ -1,4 +1,4 @@
-# JENKINS-CHATBOT - zulip bot for run jenkins job via trigger url
+# Zulip bot for run jenkins job via trigger url
 ```
 ```
 In this tutorial you'll learn how to deploy and configure this bot.
