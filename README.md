@@ -1,3 +1,64 @@
+# JENKINS-CHATBOT - zulip bot for run jenkins job via trigger url
+```
+```
+In this tutorial you'll learn how to deploy and configure this bot.
+
+FYI https://zulipchat.com/api/
+
+***
+
+## Install bot
+
+### Clone git repo in to /opt
+```bash
+cd /opt
+git clone https://github.com/rlagutinhub/zulip.jenkins-chatbot.git
+```
+### Create python virtualenv
+```bash
+cd zulip.jenkins-chatbot
+virtualenv --version
+virtualenv env
+```
+### Activate python virtualenv
+```bash
+source env/bin/activate
+```
+### Install latest zulip package in to virtualenv
+```bash
+pip3 install -U zulip
+EOF
+```
+### List installed packages in to virtualenv
+```bash
+pip3 list
+Package       Version
+------------- ----------
+certifi       2019.11.28
+cffi          1.14.0
+chardet       3.0.4
+cryptography  2.8
+distro        1.4.0
+idna          2.8
+matrix-client 0.3.2
+pip           19.1.1
+pycparser     2.20
+pyOpenSSL     19.1.0
+requests      2.21.0
+setuptools    43.0.0
+six           1.14.0
+typing        3.7.4.1
+urllib3       1.24.3
+wheel         0.33.6
+zulip         0.6.3
+```
+### Deactivate python virtualenv
+```bash
+deactivate
+```
+
+***
+
 https://zulipchat.com/api/deploying-bots
 
 yum install python34 python34-devel python34-pip
