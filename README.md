@@ -63,11 +63,11 @@ deactivate
 
 * Main settings
 
-> zuliprc_file - full path to zuliprc file (if zulip with self-signed certificate then add ```insecure=true```)
-> welcome_file - full path to welcome screen file at startup
-> logging_file - full path to log file
-> logging_format - format log message (see python3 logging)
-> bot_name - list bot names
+> * zuliprc_file - full path to zuliprc file (if zulip with self-signed certificate then add ```insecure=true```)
+> * welcome_file - full path to welcome screen file at startup
+> * logging_file - full path to log file
+> * logging_format - format log message (see python3 logging)
+> * bot_name - list bot names
 
 ```console
 "zuliprc_file": "/opt/jenkins-chatbot/bot.zuliprc",
