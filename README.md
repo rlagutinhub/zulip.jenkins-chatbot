@@ -89,7 +89,7 @@ deactivate
 "bot_name": ["jenkins", "evgeny", "евгений", "@**jenkins bot**"],
 "bot_email": "jenkins-bot@msg.dev.mta4.ru",
 "streams": ["DevOps", "core team", "general", "test"],
-"help_cmd": ["help", "man", "manual", "помощь", "хелп", "мануал", "ман"],
+"help_cmd": ["help", "man", "manual", "readme", "помощь", "хелп", "мануал", "ман"],
 "help_url": "https://zulipchat.com/",
 "deploy_cmd": ["deploy", "build", "start", "run", "билд", "пуск", "запуск", "запустить", "старт", "сборка", "собрать"],
 "artifacts_cmd": ["artifacts", "artifact", "components", "component", "артефакты", "артефакт", "компоненты", "компонент"],
@@ -119,7 +119,7 @@ deactivate
 ```console
 "server_url": "https://jenkins.dev.mta4.ru",
 "job_name": "Test",
-"url_token": "WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D8U",
+"url_token": "WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U",
 "user_name": "admin",
 "user_pass": "1198e32cfd40eb03a6ce993739d47d3774",
 "streams": ["DevOps"],
@@ -149,7 +149,7 @@ https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/bu
 ```console
 "server_url": "https://jenkins.dev.mta4.ru",
 "job_name": "Test",
-"url_token": "WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D8U",
+"url_token": "WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U",
 "user_name": "admin",
 "user_pass": "1198e32cfd40eb03a6ce993739d47d3774",
 "streams": ["DevOps"],
