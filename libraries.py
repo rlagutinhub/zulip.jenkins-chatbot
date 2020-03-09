@@ -91,15 +91,16 @@ class Libraries(object):
     def gen_passwd():
 
         # https://en.wikipedia.org/wiki/Password_strength
-        # digits = "0123456789"
+        # digits = '0123456789'
         string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
         passwd_len = 14
         passwd = ''
 
+        # length = len(digits)
         length = len(string)
 
         for x in range(passwd_len):
-            # passwd += digits[math.floor(random.random() * 10)]
+            # passwd += digits[math.floor(random.random() * length)]
             passwd += string[math.floor(random.random() * length)]
 
         return passwd
