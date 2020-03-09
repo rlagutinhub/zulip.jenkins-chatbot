@@ -129,7 +129,7 @@ deactivate
 ```
 example generated trigger url for run job:
 ```console
-https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/build?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U
+https://admin:1198e32cfd40eb03a6ce993739d47d3774@jenkins.dev.mta4.ru/job/test/build?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U
 ```
 
 #### Settings for Jenkins job with build parameters
@@ -165,7 +165,7 @@ https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/bu
 ```
 example generated trigger url for run job:
 ```console
-https://admin:11d6580708ab66c517577edc6d0319dee1@jenkins.dev.mta4.ru/job/test/buildWithParameters?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U&var1=1&var2=2&var3=3&var4=text&var5=true
+https://admin:1198e32cfd40eb03a6ce993739d47d3774@jenkins.dev.mta4.ru/job/test/buildWithParameters?token=WXL4VdN4hmIDScrPoYZnEJ2w5bdW0D7U&var1=1&var2=2&var3=3&var4=text&var5=true
 ```
 
 ## Manual start
