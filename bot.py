@@ -3,7 +3,7 @@
 
 # NAME:   JENKINS-CHATBOT/BOT.PY
 # DESC:   ZULIP BOT FOR RUN JENKINS JOB VIA TRIGGER URL
-# DATE:   08-03-2020
+# DATE:   11-03-2020
 # LANG:   PYTHON 3
 # AUTHOR: LAGUTIN R.A.
 # EMAIL:  RLAGUTIN@MTA4.RU
@@ -132,11 +132,17 @@ class ZulipBot(object):
                 if bot and msg:
                     for item in jobs:
                         if msg.lower().startswith(item) or msg.lower().startswith('\"' + item) or msg.lower().startswith('\'' + item):
-                            pattern = re.compile(item, re.IGNORECASE)
-                            msg = pattern.sub('', msg)
-                            msg = msg.strip()
-                            job = item
-                            break
+
+                            pattern = re.compile(r'^[\"\']?' + item + r'[\"\']?', re.IGNORECASE)
+                            result = pattern.search(msg)
+
+                            if result:
+                                job = result.group()
+                                job = job.lstrip('\"'); job = job.rstrip('\"')
+                                job = job.lstrip('\''); job = job.rstrip('\'')
+                                msg = pattern.sub('', msg)
+                                msg = msg.strip()
+                                break
 
                     if not job:
                         job = msg.split()[0]
@@ -155,11 +161,17 @@ class ZulipBot(object):
                 if bot and msg:
                     for item in jobs:
                         if msg.lower().startswith(item) or msg.lower().startswith('\"' + item) or msg.lower().startswith('\'' + item):
-                            pattern = re.compile(item, re.IGNORECASE)
-                            msg = pattern.sub('', msg)
-                            msg = msg.strip()
-                            job = item
-                            break
+
+                            pattern = re.compile(r'^[\"\']?' + item + r'[\"\']?', re.IGNORECASE)
+                            result = pattern.search(msg)
+
+                            if result:
+                                job = result.group()
+                                job = job.lstrip('\"'); job = job.rstrip('\"')
+                                job = job.lstrip('\''); job = job.rstrip('\'')
+                                msg = pattern.sub('', msg)
+                                msg = msg.strip()
+                                break
 
                     if not job:
                         job = msg.split()[0]
@@ -241,6 +253,8 @@ class ZulipBot(object):
 
             job_name = process_body['job']
             process_arg = process_body['args']
+
+            # print(process_bot, job_name, process_arg)
 
             if not job_name or type(job_name) == str and job_name.lower() in [x.lower() for x in self.properties_data['help_cmd']]:
 
@@ -358,7 +372,7 @@ class ZulipBot(object):
                                             process_password_check = True
 
                                     elif type(param_var) == str and param_var.lower() not in [x.lower() for x in self.properties_data['passwords_arg']]:
-                                        if param_var.lower() in [x.lower() for x in properties_item['param_list']]:
+                                        if param_var in properties_item['param_list']:
                                             process_param_col.append(process_param)
 
                                         else:
