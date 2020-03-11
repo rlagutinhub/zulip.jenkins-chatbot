@@ -19,7 +19,7 @@ cd zulip.jenkins-chatbot
 ```
 #### Create python virtualenv
 ```bash
-virtualenv env
+virtualenv env # virtualenv -p python3 env
 ```
 #### Activate python virtualenv
 ```bash
@@ -144,7 +144,7 @@ https://admin:1198e32cfd40eb03a6ce993739d47d3774@jenkins.dev.mta4.ru/job/test/bu
 * `streams` - list of subscribed zulip steams (not case sensitive) that are allowed to access this job.
 * `artifacts` - full path to script file for getting the list of artifacts this job (place into addons). 
 * `help_url` - url to wiki with job help.
-* `param_list` - list of all paramers name (not case sensitive) for Jenkins job with build parameters!
+* `param_list` - list of all paramers name (case sensitive) for Jenkins job with build parameters!
 
 ```console
 "server_url": "https://jenkins.dev.mta4.ru",
