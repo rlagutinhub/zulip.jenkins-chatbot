@@ -3,7 +3,6 @@
 
 import os
 import sys
-import json
 import dialogflow_v2 as dialogflow
 
 
