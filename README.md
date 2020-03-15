@@ -28,30 +28,41 @@ source env/bin/activate
 #### Install latest zulip package into virtualenv
 ```bash
 pip3 install -U zulip
+pip3 install -U dialogflow
 ```
 #### List installed packages into virtualenv
 ```bash
 pip3 list
 
-Package       Version
-------------- ----------
-certifi       2019.11.28
-cffi          1.14.0
-chardet       3.0.4
-cryptography  2.8
-distro        1.4.0
-idna          2.8
-matrix-client 0.3.2
-pip           19.1.1
-pycparser     2.20
-pyOpenSSL     19.1.0
-requests      2.21.0
-setuptools    43.0.0
-six           1.14.0
-typing        3.7.4.1
-urllib3       1.24.3
-wheel         0.33.6
-zulip         0.6.3
+Package                  Version
+------------------------ ----------
+cachetools               4.0.0
+certifi                  2019.11.28
+cffi                     1.14.0
+chardet                  3.0.4
+cryptography             2.8
+dialogflow               0.7.2
+distro                   1.4.0
+google-api-core          1.16.0
+google-auth              1.11.3
+googleapis-common-protos 1.51.0
+grpcio                   1.27.2
+idna                     2.9
+matrix-client            0.3.2
+pip                      20.0.2
+protobuf                 3.11.3
+pyasn1                   0.4.8
+pyasn1-modules           0.2.8
+pycparser                2.20
+pyOpenSSL                19.1.0
+pytz                     2019.3
+requests                 2.23.0
+rsa                      4.0
+setuptools               46.0.0
+six                      1.14.0
+urllib3                  1.25.8
+wheel                    0.34.2
+zulip                    0.6.3
 ```
 #### Deactivate python virtualenv
 ```bash
@@ -100,6 +111,30 @@ deactivate
     "user2@mta4.ru",
     "user3@mta4.ru"
 ]
+```
+
+#### Dialogflow settings
+
+* Configure agent [Dialogflow](https://github.com/rlagutinhub/zulip.jenkins-chatbot/blob/master/dialogflow.pdf)
+
+> All settings are required.
+
+* `status` - if not `enabled` than Dialogflow not used!
+* `credentials` - full path to `GOOGLE_APPLICATION_CREDENTIALS` private_key.json
+* `project_id` - Project ID from main page settings Dialogflow agent.
+* `language_code` - `ru` default language for agent.
+* `session_id` - custom name id session for training agent.
+* `err_answer` - text answer if Dialogflow error.
+
+```console
+"dialogflow": {
+    "status": "enabled",
+    "credentials": "/opt/zulip.jenkins-chatbot/private_key.json",
+    "project_id": "small-talk-powsxr",
+    "language_code": "ru",
+    "session_id": "jenkins-1-bot-id",
+    "err_answer": "Я Вас не совсем понял!"
+}
 ```
 
 #### Settings for Jenkins job without build parameters
