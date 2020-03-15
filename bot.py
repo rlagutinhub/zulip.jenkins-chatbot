@@ -3,7 +3,7 @@
 
 # NAME:   JENKINS-CHATBOT/BOT.PY
 # DESC:   ZULIP BOT FOR RUN JENKINS JOB VIA TRIGGER URL
-# DATE:   11-03-2020
+# DATE:   15-03-2020
 # LANG:   PYTHON 3
 # AUTHOR: LAGUTIN R.A.
 # EMAIL:  RLAGUTIN@MTA4.RU
@@ -22,6 +22,7 @@ import logging
 
 
 from libraries import Libraries as lib
+from dialogflow import DialogFlow as dialog
 
 
 properties = False
@@ -31,8 +32,6 @@ passwords = list()
 class ZulipBot(object):
 
     def __init__(self):
-
-        self.lib = lib()
 
         try:
             with open(properties, 'rt') as f:
@@ -52,6 +51,19 @@ class ZulipBot(object):
         except:
             print('Error:', self.properties_data['welcome_file'])
             sys.exit(1)
+
+        self.lib = lib()
+
+        if not self.properties_data['dialogflow']['status'] == 'enabled':
+            self.dialog_status = False
+        
+        else:
+            self.dialog = dialog(self.properties_data['dialogflow']['credentials'],
+                                 self.properties_data['dialogflow']['project_id'],
+                                 self.properties_data['dialogflow']['language_code'],
+                                 self.properties_data['dialogflow']['session_id'])
+            
+            self.dialog_status = True
 
         self.log = logging.getLogger(__name__)
         self.log.setLevel(logging.INFO)
@@ -113,7 +125,7 @@ class ZulipBot(object):
 
     def get_content(self, msg, jobs):
 
-        bot = None; job = None; args = None
+        bot = None; job = None; args = None; raw = None
 
         try:
             if msg.startswith(' '):
@@ -128,6 +140,7 @@ class ZulipBot(object):
                     bot = result.group()
                     msg = msg.replace(bot, '')
                     msg = msg.strip()
+                    raw = msg
 
                 if bot and msg:
                     for item in jobs:
@@ -157,6 +170,7 @@ class ZulipBot(object):
                 bot = str(msg.split()[0])
                 msg = msg.replace(bot, '')
                 msg = msg.strip()
+                raw = msg
 
                 if bot and msg:
                     for item in jobs:
@@ -193,8 +207,9 @@ class ZulipBot(object):
         return {
             'bot': bot,
             'job': job,
-            'args': args
-            }
+            'args': args,
+            'raw': raw
+        }
 
     def process(self, msg):
 
@@ -253,8 +268,9 @@ class ZulipBot(object):
 
             job_name = process_body['job']
             process_arg = process_body['args']
+            process_raw = process_body['raw']
 
-            # print(process_bot, job_name, process_arg)
+            # print(process_bot, job_name, process_arg, process_raw)
 
             if not job_name or type(job_name) == str and job_name.lower() in [x.lower() for x in self.properties_data['help_cmd']]:
 
@@ -430,8 +446,16 @@ class ZulipBot(object):
                     break
 
             if job_count == 0:
-                message = "**Project: **" + "~~" +  job_name + "~~" +  " : ** Not found ABORTED** :x:"
-                self.send_msg(msg_type=process_head['type'], msg_to=process_head['stream_name'], msg_topic=process_head['subject'], msg_content=message)
+
+                if not self.dialog_status:
+                    message = "**Project: **" + "~~" +  job_name + "~~" +  " : ** Not found ABORTED** :x:"
+                    self.send_msg(msg_type=process_head['type'], msg_to=process_head['stream_name'], msg_topic=process_head['subject'], msg_content=message)
+                
+                else:
+                    dialog_result = self.dialog.request_msg(process_raw)
+
+                    message = dialog_result['answer'] if dialog_result and dialog_result['answer'] else self.properties_data['dialogflow']['err_answer']
+                    self.send_msg(msg_type=process_head['type'], msg_to=process_head['stream_name'], msg_topic=process_head['subject'], msg_content=message)
 
 
 def main():
