@@ -150,7 +150,7 @@ class ZulipBot(object):
 
                     for item in jobs:
 
-                        if job_raw.lower() == item:
+                        if (msg.lower().startswith(item) or msg.lower().startswith('\"' + item) or msg.lower().startswith('\'' + item)) and (job_raw.lower() == item):
                             pattern = re.compile(r'^[\"\']?' + item + r'[\"\']?', re.IGNORECASE)
                             result = pattern.search(msg)
 
@@ -185,7 +185,7 @@ class ZulipBot(object):
 
                     for item in jobs:
 
-                        if job_raw.lower() == item:
+                        if (msg.lower().startswith(item) or msg.lower().startswith('\"' + item) or msg.lower().startswith('\'' + item)) and (job_raw.lower() == item):
                             pattern = re.compile(r'^[\"\']?' + item + r'[\"\']?', re.IGNORECASE)
                             result = pattern.search(msg)
 
