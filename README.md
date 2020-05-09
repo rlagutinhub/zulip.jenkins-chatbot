@@ -19,11 +19,11 @@ cd zulip.jenkins-chatbot
 ```
 #### Create python virtualenv
 ```bash
-virtualenv env # virtualenv -p python3 env
+virtualenv venv # virtualenv -p python3 venv
 ```
 #### Activate python virtualenv
 ```bash
-source env/bin/activate
+source venv/bin/activate
 ```
 #### Install latest zulip package into virtualenv
 ```bash
@@ -206,7 +206,7 @@ https://admin:1198e32cfd40eb03a6ce993739d47d3774@jenkins.dev.mta4.ru/job/test/bu
 ## Manual start
 
 ```bash
-/opt/zulip.jenkins-chatbot/env/bin/python3 /opt/zulip.jenkins-chatbot/bot.py --properties /opt/zulip.jenkins-chatbot/bot.properties
+/opt/zulip.jenkins-chatbot/venv/bin/python3 /opt/zulip.jenkins-chatbot/bot.py --properties /opt/zulip.jenkins-chatbot/bot.properties
 ```
 
 ## Auto start (systemd)
@@ -225,7 +225,7 @@ After=network-online.target
 Type=simple
 Restart=on-failure
 RestartSec=60s
-ExecStart=/opt/zulip.jenkins-chatbot/env/bin/python3 /opt/zulip.jenkins-chatbot/bot.py --properties /opt/zulip.jenkins-chatbot/bot.properties
+ExecStart=/opt/zulip.jenkins-chatbot/venv/bin/python3 /opt/zulip.jenkins-chatbot/bot.py --properties /opt/zulip.jenkins-chatbot/bot.properties
 
 [Install]
 WantedBy=multi-user.target
