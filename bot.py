@@ -284,16 +284,19 @@ class ZulipBot(object):
 
             if not job_name or type(job_name) == str and job_name.lower() in [x.lower() for x in self.properties_data['help_cmd']]:
 
+                bot_items = [x for x in self.properties_data['bot_name']]
+                bot_items = '|'.join(bot_items)
+
                 message = "[" + process_bot + "]" + "(" + self.properties_data['help_url'] + ")" + " : ** Help SUCCESS** :check_mark:"
 
                 message += '\n'
                 message += '```bash' + '\n'
-                message += '[jenkins|evgeny|евгений|@**jenkins bot**] [help] - help' + '\n'
-                message += '[jenkins|evgeny|евгений|@**jenkins bot**] [token] - get otp token' + '\n'
-                message += '[jenkins|evgeny|евгений|@**jenkins bot**] [job] [help] - help job' + '\n'
-                message += '[jenkins|evgeny|евгений|@**jenkins bot**] [job] [artifacts] - get job artifacts' + '\n'
-                message += '[jenkins|evgeny|евгений|@**jenkins bot**] [job] [deploy] [token=xxxxxxxxxxxxx] - Build job (required token)' + '\n'
-                message += '[jenkins|evgeny|евгений|@**jenkins bot**] [job] [deploy] [token=xxxxxxxxxxxxx] [var_1=val_1] [var_2=val_2] [var_N=val_N] - Build job with parameters (required token)' + '\n'
+                message += '[' + bot_items + '] [help] - help' + '\n'
+                message += '[' + bot_items + '] [token] - get otp token' + '\n'
+                message += '[' + bot_items + '] [job] [help] - help job' + '\n'
+                message += '[' + bot_items + '] [job] [artifacts] - get job artifacts' + '\n'
+                message += '[' + bot_items + '] [job] [deploy] [token=xxxxxxxxxxxxx] - Build job (required token)' + '\n'
+                message += '[' + bot_items + '] [job] [deploy] [token=xxxxxxxxxxxxx] [var_1=val_1] [var_2=val_2] [var_N=val_N] - Build job with parameters (required token)' + '\n'
                 message += '```'
                 message += '\n'
                 message += '>'
@@ -302,7 +305,8 @@ class ZulipBot(object):
                 jobs_items = [{'job_name': job['job_name'], 'help_url': job['help_url']} for job in self.properties_data['jobs']]
 
                 for job_item in jobs_items:
-                    message += '*[' + job_item['job_name'] + ']' + '(' +  job_item['help_url'] + ')*' + ' '
+                    message += '*[' + job_item['job_name'] + ']' + '(' +  job_item['help_url'] + ')*'
+                    if job_item != jobs_items[-1]: message +=  ', '
 
                 self.send_msg(msg_type=process_head['type'], msg_to=process_head['stream_name'], msg_topic=process_head['subject'], msg_content=message)
                 return
